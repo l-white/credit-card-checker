@@ -49,3 +49,33 @@ const findInvalidCards = (array) => {
     }
     return invalidCards;
 };
+
+// ID invalid credit card companies
+let invalidCardCompanies = [];
+const idInvalidCardCompanies = (array) => {
+    switch(array[0]){
+        case 3:
+            if(!invalidCardCompanies.includes('Amex')){
+                invalidCardCompanies.push('Amex');
+                break;
+            }
+        case 4:
+            if(!invalidCardCompanies.includes('Visa')){
+                invalidCardCompanies.push('Visa');
+            }
+            break;
+        case 5:
+            if(!invalidCardCompanies.includes('Mastercard')){
+                invalidCardCompanies.push('Mastercard');
+            }
+            break;
+        case 6:
+            if(!invalidCardCompanies.includes('Discover')){
+                invalidCardCompanies.push('Discover');
+            }
+            break;
+        default:
+            console.log('Company not found');
+    }
+    return invalidCardCompanies;
+};
