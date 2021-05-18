@@ -22,6 +22,7 @@ const mystery5 = [4, 9, 1, 3, 5, 4, 0, 4, 6, 3, 0, 7, 2, 5, 2, 3];
 // An array of all the arrays above
 const batch = [valid1, valid2, valid3, valid4, valid5, invalid1, invalid2, invalid3, invalid4, invalid5, mystery1, mystery2, mystery3, mystery4, mystery5];
 
+// Check if credit card is valid:
 const validateCred = (array) => {
     let sum = 0;
     let endOfArray = array.length - 1;
@@ -38,4 +39,13 @@ const validateCred = (array) => {
         }
     }
     return (sum % 10 ===0 ? true : false);
+};
+
+// Collect invalid credit card numbers
+let invalidCards = [];
+const findInvalidCards = (array) => { 
+    if (!validateCred(array)) {
+        invalidCards.push(array);
+    }
+    return invalidCards;
 };
